@@ -14,8 +14,8 @@ version = '1.0'
 
 jar {
 	manifest {
-		attributes	'Main-Class': 'SimpleTest',
-				'Implementation-Title': 'Sample-Gradle',
+		attributes	'Main-Class': 'CSVDemo',
+				'Implementation-Title': 'CSV-Gradle',
 				'Implementation-Version': version
 	}
 }
