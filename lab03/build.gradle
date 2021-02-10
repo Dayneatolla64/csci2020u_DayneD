@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        flatDir dirs: '/Users/dayne/Documents/Repos/csci2020u/proguard6.2.2/lib'
+    }
+    dependencies {
+        classpath':proguard'
+    }
+}
+
+plugins {
+    id "application"
+    id "java"
+}
+
+ext {
+   javaMainClass = "com.baeldung.gradle.exec.MainClass"
+}
+
+repositories { 
+    mavenCentral() 
+}
+
+dependencies {
+    compile "org.apache.commons:commons-csv:1.8"
+}
+
+application {
+    mainClassName = 'CSVDemo'
+}
+
+version = 1.0
+jar {
+  manifest {
+        attributes 'Implementation-Title': 'CSVDemo',  
+        	'Implementation-Version': version,
+        	'Main-Class': 'com.mkyong.CSVDemo'
+    }
+}
+
+
+task (minify, dependsOn: 'jar', type: proguard.gradle.ProGuardTask) {
+    configuration 'proguard.cfg'
+
+    injars 'build/libs/lab03-1.0.jar'
+    outjars'build/libs/lab03-min-1.0.jar'
+}
+
+  
