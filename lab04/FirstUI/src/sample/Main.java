@@ -24,7 +24,7 @@ public class Main extends Application {
         grid.setVgap(10);
         grid.setHgap(10);
 
-        String[] prompts = {"Username", "Password", "Email", "Phone #"};
+        String[] prompts = {"Username", "Password", "Full Name", "Email", "Phone #"};
         TextField[] inputs = new TextField[prompts.length];
 
         for(int i = 0; i < prompts.length; i++) {
